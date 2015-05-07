@@ -23,17 +23,21 @@ describe('Sinon', function() {
 describe('Zombie', function() {
 
     const Browser = require('zombie');
-    var express = require('express');
     var server;
     var port = 5000;
     var home = 'http://localhost:' + port;
 
     beforeEach(function(done) {
-        var application = express();
-        application.get('/', function(request, response) {
-            response.send('<html><head><title>Ready</title></head><body></body></html>');
+        server = require('http').createServer(function(request, response) {
+            response.end(
+                '<html>'+
+                '   <head>'+
+                '       <title>Ready</title>'+
+                '   </head>'+
+                '   <body>'+
+                '   </body>'+
+                '</html>');
         });
-        server = require('http').createServer(application);
         server.listen(port, done);
     });
 

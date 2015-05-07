@@ -11,11 +11,9 @@
   "devDependencies": {
     "chai": "^2.3.0",
     "mocha": "^2.2.4",
+    "request": "^2.55.0",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.7.0",
     "zombie": "^4.0.10"
-  },
-  "dependencies": {
-    "express": "^4.12.3"
   }
 }
