@@ -1,0 +1,19 @@
+{
+  "name": "crocus",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "mocha --recursive app"
+  },
+  "author": "@ericminio",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "mocha": "^2.2.4",
+    "sinon": "^1.14.1",
+    "sinon-chai": "^2.7.0"
+  },
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
