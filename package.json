@@ -1,19 +1,24 @@
 {
-  "name": "crocus",
-  "version": "1.0.0",
-  "description": "",
-  "repository": "https://github.com/ericminio/crocus",
-  "scripts": {
-    "test": "mocha --recursive app"
-  },
-  "author": "@ericminio",
-  "license": "ISC",
-  "devDependencies": {
-    "chai": "^2.3.0",
-    "mocha": "^2.2.4",
-    "request": "^2.55.0",
-    "sinon": "^1.14.1",
-    "sinon-chai": "^2.7.0",
-    "zombie": "^4.0.10"
-  }
+    "name": "crocus",
+    "version": "1.0.0",
+    "description": "",
+    "repository": "https://github.com/ericminio/crocus",
+    "author": "@ericminio",
+    "license": "ISC",
+    "engines": {
+        "iojs": "1.6.4",
+        "npm": "2.7.5"
+    },
+    "scripts": {
+        "test": "mocha --recursive app",
+        "start": "node ./start.js"
+    },
+    "devDependencies": {
+        "chai": "^2.3.0",
+        "mocha": "^2.2.4",
+        "request": "^2.55.0",
+        "sinon": "^1.14.1",
+        "sinon-chai": "^2.7.0",
+        "zombie": "^4.0.10"
+    }
 }
