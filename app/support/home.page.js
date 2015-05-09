@@ -16,3 +16,21 @@ HomePage.prototype.seesTitle = function(expected, done) {
         }).
         then(done);
 };
+
+HomePage.prototype.seesTheQuestion = function(expected, done) {
+    var page = this;
+    page.whenReady.
+        then(function() {
+            page.browser.assert.text('#question', expected);
+        }).
+        then(done, done);
+};
+
+HomePage.prototype.seesAMap = function(done) {
+    var page = this;
+    page.whenReady.
+        then(function() {
+            page.browser.assert.element('#map');
+        }).
+        then(done, done);
+};
