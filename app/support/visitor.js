@@ -5,7 +5,7 @@ function Visitor(home) {
 };
 module.exports = Visitor;
 
-Visitor.prototype.goToHomePage = function(next) {
+Visitor.prototype.visitsHomePage = function(next) {
     return new HomePage(this);
 };
 
