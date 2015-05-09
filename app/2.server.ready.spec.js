@@ -17,8 +17,8 @@ describe('Server', function() {
     var server;
 
     beforeEach(function(done) {
-        server = new Server();
-        server.start(port, done);
+        server = new Server({ port: port });
+        server.start(done);
     });
 
     afterEach(function() {
