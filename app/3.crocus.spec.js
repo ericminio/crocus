@@ -1,10 +1,7 @@
-describe('Crocus', function() {
-    var crocus = require('./support/starter');
-    var visitor;
+var Starter = require('./support/starter');
+var crocus = new Starter();
 
-    beforeEach(function() {
-        visitor = crocus.visitor.visitsHomePage();
-    });
+describe('Crocus', function() {
 
     it('says its name', function(done) {
         visitor.seesTitle('Crocus', done);
@@ -14,7 +11,23 @@ describe('Crocus', function() {
         visitor.seesTheQuestion('Has spring begun around you?', done);
     });
 
+    it('gives the visitor a chance to answer', function(done) {
+        visitor.seesTheYesButton(done);
+    });
+
     it('displays a map', function(done) {
         visitor.seesAMap(done);
+    });
+
+    var visitor;
+
+    beforeEach(function(done) {
+        crocus.start({ port: 5000, next: function() {
+            visitor = crocus.visitor.visitsHomePage();
+            done();
+        } });
+    });
+    afterEach(function() {
+        crocus.stop();
     });
 });

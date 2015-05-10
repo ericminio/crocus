@@ -1,7 +1,7 @@
 function Starter() {
     this.visitor = {};
 };
-module.exports = new Starter();
+module.exports = Starter;
 
 var Server = require('../lib/server');
 var Visitor = require('./visitor');
@@ -18,10 +18,3 @@ Starter.prototype.start = function(options) {
 Starter.prototype.stop = function() {
     this.server.stop();
 };
-
-beforeEach(function(done) {
-    module.exports.start({ port: 5000, next: done });
-});
-afterEach(function() {
-    module.exports.stop();
-});

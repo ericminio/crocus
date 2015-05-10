@@ -32,5 +32,17 @@ HomePage.prototype.seesAMap = function(done) {
         then(function() {
             page.browser.assert.element('#map');
         }).
+        done(done);
+};
+
+HomePage.prototype.seesTheYesButton = function(done) {
+    var page = this;
+    page.whenReady.
+        then(function() {
+            page.browser.assert.element('button#yes');
+        }).
+        then(function() {
+            page.browser.assert.text('#yes', 'Yes!');
+        }).
         then(done, done);
 };

@@ -2,10 +2,41 @@
 <html>
     <head>
         <title>Crocus</title>
+
+        <script type="text/javascript"
+                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaUrFVlW2--VHvMyOZjuI85q6oOsm8AFw">
+        </script>
+        <script type="text/javascript">
+
+            yes = function() {
+                window.navigator.geolocation.getCurrentPosition(function(p) {
+                    document.position = p.coords;
+                    var markerPosition = new google.maps.LatLng(document.position.latitude, document.position.longitude);
+                    document.marker = new google.maps.Marker({
+                        position: markerPosition,
+                        map: document.map
+                    });
+                    document.map.setCenter(markerPosition);
+                    document.map.setZoom(13);
+                });
+            }
+            window.onload = function() {
+                var map = document.getElementById('map');
+
+                document.map = new google.maps.Map(map, {
+                    zoom: 1,
+                    center: new google.maps.LatLng(0.0, 0.0)
+                });
+            };
+        </script>
     </head>
 
-    <body>
-        <div id="question">Has spring begun around you?</div>
-        <div id="map"></div>
+    <body style="height: 100vw; width:100vw; margin:0px;">
+        <header style="position:fixed; top:0px; height: 50px; width:100%; padding: 5px;">
+            <div id="question" style="position:fixed;">Has spring begun around you?</div>
+            <button id="yes" onmouseup="yes()" style="position:fixed; right:0px;">Yes!</button>
+        </header>
+
+        <div id="map" style="width:100%; height:80%; position:fixed; top: 50px;"></div>
     </body>
 </html>
